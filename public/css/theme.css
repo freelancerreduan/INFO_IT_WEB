@@ -1,0 +1,413 @@
+/* ইনফো আইটি — website theme (demo design theke, kono change kora hoyni) */
+:root{
+  --navy-900:#0a1a3d;
+  --navy-800:#0e2154;
+  --navy-700:#122a68;
+  --navy-600:#16336f;
+  --mint:#3fe0c5;
+  --mint-dark:#1fb99e;
+  --cream:#f4f2ec;
+  --paper:#faf9f6;
+  --ink:#12172b;
+  --ink-soft:#5b6072;
+  --line:#e6e3da;
+  --gold:#f0a83a;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display-font{
+  font-family:'Anek Bangla',system-ui,sans-serif;
+}
+a{text-decoration:none;}
+.container-xl{max-width:1220px;}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.02em;
+  color:var(--mint-dark);
+  margin-bottom:.9rem;
+}
+.eyebrow::before{
+  content:"";
+  width:18px;height:2px;
+  background:var(--mint-dark);
+  display:inline-block;
+}
+.section-pad{padding:5.5rem 0;}
+@media(max-width:767px){.section-pad{padding:3.25rem 0;}}
+
+.btn-mint{
+  background:var(--mint);
+  border:1px solid var(--mint);
+  color:var(--navy-900);
+  font-weight:600;
+  padding:.68rem 1.4rem;
+  border-radius:8px;
+  transition:.2s ease;
+}
+.btn-mint:hover{background:var(--mint-dark);border-color:var(--mint-dark);color:var(--navy-900);}
+.btn-outline-navy{
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  font-weight:600;
+  padding:.68rem 1.4rem;
+  border-radius:8px;
+  transition:.2s ease;
+}
+.btn-outline-navy:hover{background:rgba(255,255,255,.08);color:#fff;}
+.btn-navy{
+  background:var(--navy-800);
+  color:#fff;
+  font-weight:600;
+  padding:.65rem 1.35rem;
+  border-radius:8px;
+  border:1px solid var(--navy-800);
+}
+.btn-navy:hover{background:var(--navy-700);color:#fff;}
+.btn-ghost-navy{
+  border:1px solid var(--line);
+  color:var(--navy-800);
+  font-weight:600;
+  padding:.55rem 1.15rem;
+  border-radius:8px;
+  background:#fff;
+}
+.btn-ghost-navy:hover{border-color:var(--navy-800);}
+
+/* ===== NAVBAR ===== */
+.navbar-vertex{
+  padding:.9rem 0;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.brand-mark{
+  width:38px;height:38px;
+  background:var(--navy-800);
+  border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;font-family:'Anek Bangla';
+  flex-shrink:0;
+}
+.brand-text{line-height:1.05;}
+.brand-text .name{font-weight:700;font-size:.98rem;color:var(--ink);font-family:'Anek Bangla';}
+.brand-text .tag{font-size:.62rem;letter-spacing:.09em;color:var(--ink-soft);font-weight:600;}
+.nav-links a{
+  color:var(--ink);
+  font-size:.92rem;
+  font-weight:500;
+  margin:0 .85rem;
+}
+.nav-links a:hover{color:var(--navy-800);}
+.nav-phone{
+  font-size:.88rem;font-weight:600;color:var(--ink);
+  display:flex;align-items:center;gap:.4rem;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:radial-gradient(120% 140% at 15% 0%, var(--navy-600) 0%, var(--navy-800) 45%, var(--navy-900) 100%);
+  color:#fff;
+  padding:4.5rem 0 5rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(63,224,197,.12);
+  border:1px solid rgba(63,224,197,.35);
+  color:var(--mint);
+  font-size:.76rem;font-weight:600;
+  padding:.4rem .9rem;
+  border-radius:99px;
+  margin-bottom:1.6rem;
+}
+.hero-badge .dot{width:6px;height:6px;background:var(--mint);border-radius:50%;}
+.hero h1{
+  font-size:2.85rem;
+  font-weight:700;
+  line-height:1.12;
+  letter-spacing:-.01em;
+}
+.hero h1 .mint{color:var(--mint);display:block;}
+@media(max-width:767px){.hero h1{font-size:2.05rem;}}
+.hero p.lead-copy{
+  color:rgba(255,255,255,.72);
+  font-size:1.02rem;
+  max-width:520px;
+  margin:1.25rem 0 2rem;
+}
+.hero-stats{
+  margin-top:3rem;
+  display:flex;
+  gap:2.5rem;
+  flex-wrap:wrap;
+}
+.hero-stats .stat b{
+  display:block;
+  font-family:'Anek Bangla';
+  font-size:1.55rem;
+  font-weight:700;
+  color:#fff;
+}
+.hero-stats .stat span{
+  font-size:.76rem;
+  color:rgba(255,255,255,.55);
+  line-height:1.2;
+  display:block;
+  max-width:100px;
+}
+.hero-media{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+}
+.hero-media img{width:100%;height:420px;object-fit:cover;display:block;}
+.hero-float-card{
+  position:absolute;
+  left:-1.4rem;
+  bottom:-1.4rem;
+  background:#fff;
+  color:var(--ink);
+  border-radius:12px;
+  padding:.85rem 1.15rem;
+  box-shadow:0 20px 40px -12px rgba(0,0,0,.28);
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  max-width:270px;
+}
+@media(max-width:991px){.hero-float-card{position:static;margin-top:-2.2rem;margin-left:1rem;max-width:90%;}}
+.hero-float-card .ic{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(63,224,197,.15);
+  color:var(--mint-dark);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.hero-float-card .ttl{font-size:.82rem;font-weight:700;}
+.hero-float-card .sub{font-size:.72rem;color:var(--ink-soft);}
+
+/* ===== LOGO STRIP ===== */
+.logo-strip{
+  background:var(--cream);
+  padding:1.6rem 0;
+  border-bottom:1px solid var(--line);
+}
+.logo-strip .label{
+  font-size:.7rem;letter-spacing:.08em;font-weight:700;color:var(--ink-soft);
+  text-transform:none;
+}
+.logo-strip .brands{
+  display:flex;gap:2.4rem;flex-wrap:wrap;
+  font-family:'Anek Bangla';
+  font-weight:700;
+  color:#9a9689;
+  font-size:1.02rem;
+}
+
+/* ===== FEATURE CARDS ===== */
+.feature-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:1.6rem 1.4rem;
+  height:100%;
+}
+.feature-card .ic{
+  width:42px;height:42px;
+  border-radius:10px;
+  background:var(--navy-800);
+  color:var(--mint);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+  font-size:1.1rem;
+}
+.feature-card h3{font-size:1.02rem;font-weight:700;margin-bottom:.5rem;}
+.feature-card p{font-size:.88rem;color:var(--ink-soft);margin:0;line-height:1.55;}
+
+/* ===== COURSES ===== */
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;
+  margin-bottom:2.4rem;
+}
+.section-head h2{font-size:1.9rem;font-weight:700;letter-spacing:-.01em;max-width:640px;}
+.section-head p{color:var(--ink-soft);font-size:.95rem;max-width:520px;margin:.6rem 0 0;}
+
+.course-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  height:100%;
+  transition:.2s ease;
+}
+.course-card:hover{box-shadow:0 20px 40px -20px rgba(10,26,61,.25);}
+.course-thumb{
+  position:relative;height:150px;
+  background-size:cover;background-position:center;
+}
+.course-thumb .badge-cat{
+  position:absolute;top:.7rem;left:.7rem;
+  background:rgba(10,26,61,.75);
+  color:#fff;
+  font-size:.65rem;font-weight:700;letter-spacing:.04em;
+  padding:.3rem .6rem;border-radius:6px;
+}
+.course-body{padding:1.1rem 1.2rem 1.3rem;}
+.course-meta-top{
+  display:flex;align-items:center;gap:.9rem;
+  font-size:.78rem;color:var(--ink-soft);margin-bottom:.6rem;
+}
+.course-meta-top .rating{color:var(--gold);font-weight:700;}
+.course-body h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem;}
+.course-body .desc{font-size:.84rem;color:var(--ink-soft);margin-bottom:.85rem;line-height:1.5;min-height:2.5em;}
+.course-facts{
+  display:flex;flex-wrap:wrap;gap:.4rem 1rem;
+  font-size:.76rem;color:var(--ink-soft);
+  border-top:1px solid var(--line);
+  padding-top:.75rem;margin-bottom:.9rem;
+}
+.course-facts span{display:flex;align-items:center;gap:.3rem;}
+.course-price-row{display:flex;align-items:center;justify-content:space-between;}
+.price-now{font-weight:700;font-size:1.05rem;font-family:'Anek Bangla';color:var(--ink);}
+.price-old{font-size:.8rem;color:#b3ae9f;text-decoration:line-through;margin-left:.4rem;}
+
+/* ===== BATCHES ===== */
+.batch-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:1.4rem 1.4rem 1.5rem;height:100%;
+}
+.batch-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem;}
+.batch-id{font-size:.75rem;font-weight:700;color:var(--ink-soft);}
+.status-pill{font-size:.68rem;font-weight:700;padding:.25rem .6rem;border-radius:99px;}
+.status-open{background:#e4f8ef;color:#1f9d5c;}
+.status-almost{background:#fdefdc;color:#c67d13;}
+.batch-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.7rem;}
+.batch-line{font-size:.82rem;color:var(--ink-soft);display:flex;gap:.5rem;margin-bottom:.35rem;align-items:flex-start;}
+.batch-line i{margin-top:.2rem;color:var(--ink-soft);}
+.progress-thin{height:6px;border-radius:99px;background:var(--cream);margin:.9rem 0 .4rem;overflow:hidden;}
+.progress-thin .bar{height:100%;background:var(--mint-dark);}
+.seat-txt{font-size:.75rem;color:var(--ink-soft);display:flex;justify-content:space-between;margin-bottom:1.1rem;}
+
+/* ===== INSTRUCTORS ===== */
+.instructor-card{text-align:left;padding:1.4rem 0;}
+.avatar-init{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--navy-800);color:var(--mint);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-family:'Anek Bangla';
+  margin-bottom:1rem;
+}
+.instructor-card h3{font-size:1rem;font-weight:700;margin-bottom:.15rem;}
+.instructor-card .role{font-size:.82rem;color:var(--mint-dark);font-weight:600;margin-bottom:.5rem;}
+.instructor-card .exp{font-size:.78rem;color:var(--ink-soft);display:flex;align-items:center;gap:.5rem;}
+.instructor-card .exp .stars{color:var(--gold);}
+
+/* ===== TESTIMONIALS ===== */
+.testi-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:1.5rem;height:100%;
+}
+.testi-card .stars{color:var(--gold);font-size:.85rem;margin-bottom:.9rem;}
+.testi-card p.quote{font-size:.92rem;color:var(--ink);line-height:1.6;margin-bottom:1.2rem;}
+.testi-person{display:flex;align-items:center;gap:.7rem;}
+.testi-person .av{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--cream);color:var(--navy-800);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.8rem;
+}
+.testi-person .nm{font-size:.85rem;font-weight:700;}
+.testi-person .rl{font-size:.75rem;color:var(--ink-soft);}
+
+/* ===== BLOG + FAQ ===== */
+.blog-item{padding:1.15rem 0;border-bottom:1px solid var(--line);}
+.blog-item:last-child{border-bottom:none;}
+.blog-item .tag{font-size:.72rem;color:var(--mint-dark);font-weight:700;}
+.blog-item .dot-sep{color:var(--ink-soft);font-weight:400;margin:0 .35rem;}
+.blog-item .read{font-size:.72rem;color:var(--ink-soft);font-weight:500;}
+.blog-item h3{font-size:1rem;font-weight:700;margin:.35rem 0 .3rem;}
+.blog-item p{font-size:.85rem;color:var(--ink-soft);margin:0;}
+
+.accordion-vertex .accordion-item{border:none;border-bottom:1px solid var(--line);border-radius:0;background:transparent;}
+.accordion-vertex .accordion-button{
+  font-size:.92rem;font-weight:600;color:var(--ink);
+  background:transparent;padding:1rem 0;box-shadow:none;
+}
+.accordion-vertex .accordion-button:not(.collapsed){color:var(--navy-800);background:transparent;box-shadow:none;}
+.accordion-vertex .accordion-button::after{filter:none;}
+.accordion-vertex .accordion-body{padding:0 0 1.1rem;font-size:.85rem;color:var(--ink-soft);}
+
+/* ===== CTA BANNER ===== */
+.cta-banner{
+  background:linear-gradient(120deg,var(--navy-700),var(--navy-900));
+  border-radius:22px;
+  padding:3.4rem 2rem;
+  text-align:center;
+  color:#fff;
+}
+.cta-banner h2{font-size:1.9rem;font-weight:700;max-width:620px;margin:0 auto;line-height:1.25;}
+.cta-banner p{color:rgba(255,255,255,.68);max-width:520px;margin:1rem auto 1.8rem;font-size:.95rem;}
+
+/* ===== FOOTER ===== */
+footer.site-footer{
+  background:var(--navy-900);
+  color:rgba(255,255,255,.65);
+  padding:3.5rem 0 1.5rem;
+}
+footer.site-footer h5{
+  color:#fff;font-size:.85rem;font-weight:700;letter-spacing:.03em;margin-bottom:1rem;
+}
+footer.site-footer a{color:rgba(255,255,255,.62);font-size:.85rem;display:block;margin-bottom:.55rem;}
+footer.site-footer a:hover{color:var(--mint);}
+footer.site-footer p{font-size:.85rem;line-height:1.6;}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:2.5rem;padding-top:1.3rem;
+  font-size:.78rem;color:rgba(255,255,255,.45);
+}
+
+.rating-stars{color:var(--gold);}
+
+/* ===== ভর্তি ও কোর্স ডিটেইলস পেজের সাইডবার/ফর্ম ===== */
+.sidebar-card{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:1.5rem;box-shadow:0 20px 40px -28px rgba(10,26,61,.35);
+}
+.sidebar-row{
+  display:flex;justify-content:space-between;font-size:.85rem;
+  padding:.6rem 0;border-bottom:1px solid var(--line);color:var(--ink-soft);
+}
+.sidebar-row b{color:var(--ink);font-weight:600;}
+.sidebar-row:last-of-type{border-bottom:none;}
+.form-label{font-size:.85rem;}
+.form-control, .form-select{
+  border-color:var(--line);padding:.6rem .8rem;font-size:.9rem;border-radius:8px;
+}
+.form-control:focus, .form-select:focus{
+  border-color:var(--navy-700);box-shadow:0 0 0 .2rem rgba(18,42,104,.12);
+}
+
+
+/* ===== কোর্স ডিটেইলস পেজ ===== */
+.detail-block{margin-bottom:2.2rem;}
+.detail-block h2{font-size:1.25rem;font-weight:700;margin-bottom:1rem;}
+.curriculum-list li, .outcome-list li{
+  font-size:.9rem;color:var(--ink-soft);padding:.55rem 0;
+  border-bottom:1px solid var(--line);
+  display:flex;gap:.6rem;align-items:flex-start;
+}
+.curriculum-list li:last-child, .outcome-list li:last-child{border-bottom:none;}
+.curriculum-list li i, .outcome-list li i{color:var(--mint-dark);margin-top:.2rem;}

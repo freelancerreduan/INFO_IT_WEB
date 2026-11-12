@@ -1,0 +1,40 @@
+<?php $__env->startSection('title', 'সকল কোর্স — ' . setting('institute_name')); ?>
+
+<?php $__env->startSection('content'); ?>
+<!-- ================= PAGE BANNER ================= -->
+<header class="hero" style="padding:3.2rem 0 3rem;">
+  <div class="container container-xl">
+    <div class="eyebrow" style="color:var(--mint);">কোর্সসমূহ</div>
+    <h1 style="font-size:2.1rem;font-weight:700;max-width:640px;line-height:1.2;"><?php echo e(setting('institute_name')); ?>-এর সকল প্রোগ্রাম</h1>
+    <p style="color:rgba(255,255,255,.72);max-width:560px;margin-top:.8rem;font-size:.95rem;">প্রতিটি প্রোগ্রামে ক্যাপস্টোন প্রজেক্ট, ভেরিফায়েবল সার্টিফিকেট ও কিস্তিতে পেমেন্টের সুবিধা। ক্যাটাগরি অনুযায়ী ফিল্টার করুন অথবা যেকোনো কোর্স খুলে পূর্ণ সিলেবাস দেখুন।</p>
+  </div>
+</header>
+
+<!-- ================= FILTER + GRID ================= -->
+<section class="section-pad">
+  <div class="container container-xl">
+    <div id="categoryFilters" class="d-flex flex-wrap gap-2 mb-4">
+      <a href="<?php echo e(route('courses.index')); ?>" class="btn-ghost-navy btn-sm filter-btn"
+         <?php if(! request('category')): ?> style="background:var(--navy-800);color:#fff;border-color:var(--navy-800);" <?php endif; ?>>সকল ক্যাটাগরি</a>
+      <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <a href="<?php echo e(route('courses.index', ['category' => $cat])); ?>" class="btn-ghost-navy btn-sm filter-btn"
+           <?php if(request('category') === $cat): ?> style="background:var(--navy-800);color:#fff;border-color:var(--navy-800);" <?php endif; ?>><?php echo e($cat); ?></a>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+
+    <div id="courseGrid" class="row g-4">
+      <?php $__empty_1 = true; $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+        <?php echo $__env->make('frontend.partials.course-card', ['c' => $course], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+        <div class="col-12"><p class="text-center" style="color:var(--ink-soft);">এই ক্যাটাগরিতে কোনো কোর্স পাওয়া যায়নি।</p></div>
+      <?php endif; ?>
+    </div>
+
+    <?php if($courses->hasPages()): ?>
+      <div class="mt-5 d-flex justify-content-center"><?php echo e($courses->links()); ?></div>
+    <?php endif; ?>
+  </div>
+</section>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /home/infoitcom/public_html/resources/views/frontend/courses.blade.php ENDPATH**/ ?>

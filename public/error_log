@@ -1,0 +1,14 @@
+[25-Sep-2026 16:03:01 UTC] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.34. in /home/infoitcom/public_html/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/infoitcom/public_html/vendor/composer/autoload_real.php(25): require()
+#1 /home/infoitcom/public_html/vendor/autoload.php(22): ComposerAutoloaderInit626b9e7ddd47fb7eff9aaa53cce0c9ad::getLoader()
+#2 /home/infoitcom/public_html/public/index.php(14): require('/home/infoitcom...')
+#3 {main}
+  thrown in /home/infoitcom/public_html/vendor/composer/platform_check.php on line 22
+[26-Sep-2026 01:48:28 UTC] PHP Fatal error:  Uncaught RuntimeException: Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.34. in /home/infoitcom/public_html/vendor/composer/platform_check.php:22
+Stack trace:
+#0 /home/infoitcom/public_html/vendor/composer/autoload_real.php(25): require()
+#1 /home/infoitcom/public_html/vendor/autoload.php(22): ComposerAutoloaderInit626b9e7ddd47fb7eff9aaa53cce0c9ad::getLoader()
+#2 /home/infoitcom/public_html/public/index.php(14): require('/home/infoitcom...')
+#3 {main}
+  thrown in /home/infoitcom/public_html/vendor/composer/platform_check.php on line 22
